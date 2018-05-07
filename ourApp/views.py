@@ -14,7 +14,7 @@ def index(request):
 #	return render(request, 'dtime.html', {'date':(datetime.datetime.now()+datetime.timedelta(hours=offset)), 'hours':offset})
 @login_required
 def news(request):
-	return render(request, 'news.html', {'News':News.objects.all()})
+	return render(request, 'news.html', {'News':News.objects.filter(viewer = request.user)})
 
 def accounts(request):
 	return render(request, 'accounts.html', )

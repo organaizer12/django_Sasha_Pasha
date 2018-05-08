@@ -2,6 +2,10 @@
 {% load static %}
 <html>
  <body>
- 	{{News}}
+ 	{% for new in News %}
+ 	<li> {{new}} </li>
+ 	{% endfor %}
+ 
+ 	
  </body>
 </html>
